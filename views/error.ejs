@@ -1,0 +1,7 @@
+<h1>
+  <%= message %>
+</h1>
+<p>That page isn't on this site. Status <%= error.status %>.</p>
+<% if (error.stack) { %>
+  <pre class="small bg-white border rounded p-3"><%= error.stack %></pre>
+  <% } %>

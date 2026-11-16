@@ -1,0 +1,35 @@
+<h1>Contact me</h1>
+<p>It posts back to this same page. No email. Empty boxes get blocked in the browser.</p>
+
+<div class="row">
+  <div class="col-lg-7">
+    <% if (error) { %>
+      <div class="alert alert-danger">
+        <%= error %>
+      </div>
+      <% } %>
+        <% if (success) { %>
+          <div class="alert alert-success">
+            <%= success %>
+          </div>
+          <% } %>
+
+            <div id="form-warning" class="alert alert-warning d-none"></div>
+
+            <form id="contact-form" method="post" action="/contact" class="card card-body">
+              <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="text" id="email" name="email">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+              </div>
+              <button class="btn silly" type="submit" data-silly="ok send it">Send</button>
+            </form>
+  </div>
+</div>

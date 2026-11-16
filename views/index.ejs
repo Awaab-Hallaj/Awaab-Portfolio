@@ -1,0 +1,17 @@
+<div class="intro">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h1>Hi, I'm Awaab</h1>
+      <p class="lead mb-2">Networking & IT Security Student.</p>
+      <p>Portfolio for web and scripting. Hover a button and the label changes. Click the picture for a surprise!</p>
+      <%# data-silly is the hover text. main.js reads that attribute %>
+        <a class="btn silly me-2" href="/projects" data-silly="ok go look">See projects</a>
+        <a class="btn silly light" href="/contact" data-silly="i don't bite">Contact me</a>
+    </div>
+    <div class="col-md-4 text-center mt-4 mt-md-0">
+      <%# class avatar is what main.js looks for. the picture is in public/images %>
+        <img src="/images/profile.png" alt="Awaab" class="avatar">
+        <p id="poke-line" class="poke mt-2 mb-0">click the picture</p>
+    </div>
+  </div>
+</div>

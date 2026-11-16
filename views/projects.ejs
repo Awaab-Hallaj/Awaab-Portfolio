@@ -1,0 +1,27 @@
+<h1>Projects</h1>
+<p>Hover a card. It lifts. The pink line under it is hidden until then.</p>
+
+<%# projects is the array from the /projects route. forEach prints one card each %>
+  <div class="row g-3">
+    <% projects.forEach(function(project) { %>
+      <div class="col-md-4">
+        <div class="card project-card h-100">
+          <div class="card-body">
+            <%# icon is a font awesome class stored on the object, like fa-solid fa-code %>
+              <p class="mb-2"><i class="<%= project.icon %> fa-lg"></i></p>
+              <h2 class="h5 card-title">
+                <%= project.name %>
+              </h2>
+              <p class="card-text">
+                <%= project.blurb %>
+              </p>
+              <span class="badge text-bg-dark">
+                <%= project.tag %>
+              </span>
+              <%# .psst is height 0 until the card is hovered %>
+                <p class="psst">you hovered. hi.</p>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+  </div>

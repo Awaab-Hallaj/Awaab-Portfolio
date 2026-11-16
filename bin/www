@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var app = require('../app'); // ../ goes up one folder. app.js exports the express app
+var http = require('http'); // node built-in. express doesnt listen by itself, http does
+
+// process.env.PORT is what render sets. if its empty i fall back to 3000
+var port = process.env.PORT || 3000;
+app.set('port', port); // store it on the app so other code can read it
+
+var server = http.createServer(app); // wrap the express app in a real http server
+
+server.listen(port); // this is the line that actually opens the port
+server.on('error', function(error) {
+  // EADDRINUSE means something is already on that port, usually an old npm start
+  if (error.code === 'EADDRINUSE') {
+    console.error('Port ' + port + ' is already in use');
+    process.exit(1); // quit. 1 means it failed
+  }
+  throw error; // any other error, just let it crash so i can see it
+});
