@@ -1,3 +1,4 @@
+//Demonstrate how these elements change text while hovered.
 var silly = document.querySelectorAll('[data-silly]');
 silly.forEach(function (el) {
   var normal = el.textContent;
@@ -5,6 +6,7 @@ silly.forEach(function (el) {
   el.onmouseleave = function () { el.textContent = normal; };
 });
 
+//Explain how the avatar click interaction updates the page.
 var avatar = document.querySelector('.avatar');
 var pokeLine = document.getElementById('poke-line');
 var lines = ['heyyy', 'ok again', 'you can stop', 'fine. one more.', 'projects page. go.'];
@@ -19,16 +21,19 @@ if (avatar) {
   };
 }
 
+//Explain how this visit counter is stored and displayed.
 var seen = Number(sessionStorage.getItem('pages') || 0) + 1;
 sessionStorage.setItem('pages', seen);
 document.getElementById('visit-count').textContent = 'pages this visit: ' + seen;
 
+//Demonstrate when the leave-page message appears and how it closes.
 var bye = document.getElementById('come-back');
 document.onmouseout = function (e) {
   if (!e.relatedTarget) bye.classList.add('show');
 };
 bye.onclick = function () { bye.classList.remove('show'); };
 
+//Demonstrate the click effect and explain how temporary elements are removed.
 document.onclick = function (e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
   var star = document.createElement('span');
@@ -40,6 +45,7 @@ document.onclick = function (e) {
   setTimeout(function () { star.remove(); }, 600);
 };
 
+//Explain how the form check responds to a submit with missing fields.
 var form = document.getElementById('contact-form');
 if (form) {
   form.onsubmit = function (e) {

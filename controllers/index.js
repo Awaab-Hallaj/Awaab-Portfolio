@@ -1,22 +1,23 @@
 var express = require('express');
-var router = express.Router(); // a mini app just for routes. app.js mounts this on /
+var router = express.Router();
 
-// router.get runs on a normal visit. the first arg is the path after the domain
-router.get('/', function(req, res, next) {
+//Explain what this route renders when the home URL is requested.
+router.get('/', function (req, res, next) {
   // res.render looks in views/ for index.ejs and passes this object in
   // title goes in the tab. page is only so the nav knows which link is active
   res.render('index', { title: 'Home', page: 'home' });
 });
 
-router.get('/about', function(req, res, next) {
+//Explain how this route connects the About URL to its view.
+router.get('/about', function (req, res, next) {
   res.render('about', {
     title: 'About Me',
     page: 'about'
   });
 });
 
-router.get('/projects', function(req, res, next) {
-  // the ejs file just loops this. a new card = a new object, i dont make a new page
+//Explain how this route prepares project data for the view.
+router.get('/projects', function (req, res, next) {
   var projects = [
     {
       name: 'Portfolio site',
@@ -41,12 +42,12 @@ router.get('/projects', function(req, res, next) {
   res.render('projects', {
     title: 'Projects',
     page: 'projects',
-    projects: projects // this name is what the ejs file uses: projects.forEach
+    projects: projects
   });
 });
 
-router.get('/contact', function(req, res, next) {
-  // error and success start empty so neither alert shows on a fresh visit
+//Explain what a fresh GET request shows on the contact page.
+router.get('/contact', function (req, res, next) {
   res.render('contact', {
     title: 'Contact Me',
     page: 'contact',
@@ -55,9 +56,8 @@ router.get('/contact', function(req, res, next) {
   });
 });
 
-// same url as the get, but post only happens when the form is submitted
-router.post('/contact', function(req, res, next) {
-  // req.body exists because of express.urlencoded in app.js. || '' so trim doesnt crash if its missing
+router.post('/contact', function (req, res, next) {
+  //Explain how submitted form fields reach this handler.
   var name = (req.body.name || '').trim();
   var email = (req.body.email || '').trim();
   var message = (req.body.message || '').trim();
@@ -66,12 +66,10 @@ router.post('/contact', function(req, res, next) {
   if (!name || !email || !message) {
     problem = 'You left a box empty.';
   } else if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
-    // indexOf returns -1 when the character isnt there. not a real email check, just a quick one
     problem = 'That email needs an @ and a dot.';
   }
 
   if (problem) {
-    // return so the success render below doesnt also run
     return res.render('contact', {
       title: 'Contact Me',
       page: 'contact',
@@ -79,8 +77,6 @@ router.post('/contact', function(req, res, next) {
       success: ''
     });
   }
-
-  // nothing is saved and no email is sent. the page just says it worked
   res.render('contact', {
     title: 'Contact Me',
     page: 'contact',
@@ -89,4 +85,4 @@ router.post('/contact', function(req, res, next) {
   });
 });
 
-module.exports = router; // app.js does require('./controllers/index') and gets this
+module.exports = router;

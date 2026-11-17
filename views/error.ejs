@@ -1,7 +1,9 @@
+<!--Explain how the error route passes details into this view. -->
 <h1>
   <%= message %>
 </h1>
 <p>That page isn't on this site. Status <%= error.status %>.</p>
 <% if (error.stack) { %>
+  <!--Explain when this conditional error detail is shown. -->
   <pre class="small bg-white border rounded p-3"><%= error.stack %></pre>
   <% } %>

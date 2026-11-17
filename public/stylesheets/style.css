@@ -1,3 +1,4 @@
+/*Explain the page-wide layout and base colors. */
 body {
   min-height: 100vh;
   display: flex;
@@ -32,6 +33,7 @@ h1 {
   font-weight: 700;
 }
 
+/*Explain how the navigation changes on hover and for the active page. */
 .my-nav .navbar-brand:hover {
   animation: wiggle 0.4s linear;
 }
@@ -53,6 +55,7 @@ h1 {
   padding: 4px 0;
 }
 
+/*Explain how the intro and cards share a visual style. */
 .intro,
 .card {
   background: #fff;
@@ -65,6 +68,7 @@ h1 {
   padding: 28px;
 }
 
+/*Demonstrate the avatar hover and click animations. */
 .avatar {
   width: 160px;
   height: auto;
@@ -107,6 +111,7 @@ h1 {
   transform: rotate(-2deg) scale(1.04);
 }
 
+/*Demonstrate how the project cards respond to hover. */
 .project-card {
   transition: transform 0.18s ease;
 }
@@ -131,6 +136,7 @@ h1 {
   margin: 0;
 }
 
+/*Explain how this detail appears when a card is hovered. */
 .project-card:hover .psst {
   max-height: 2rem;
 }
@@ -150,6 +156,7 @@ h1 {
   transform: rotate(-4deg) scale(1.08);
 }
 
+/*Explain the footer link and visit counter styling. */
 footer.site-foot {
   background: #1b1b1b;
   color: #fff;
@@ -175,6 +182,7 @@ footer a:hover i {
   color: #ffe56a;
 }
 
+/*Demonstrate how the leave-page banner moves into view. */
 #come-back {
   position: fixed;
   left: 50%;
@@ -206,6 +214,7 @@ footer a:hover i {
   animation: wiggle 0.35s linear;
 }
 
+/*Explain how these keyframes create the page animations. */
 @keyframes wiggle {
   25% {
     transform: rotate(-7deg);

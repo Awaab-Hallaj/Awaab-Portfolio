@@ -1,8 +1,10 @@
+<!--Explain how this form sends its fields to the contact route. -->
 <h1>Contact me</h1>
 <p>It posts back to this same page. No email. Empty boxes get blocked in the browser.</p>
 
 <div class="row">
   <div class="col-lg-7">
+    <!--Explain how these EJS conditions control feedback messages. -->
     <% if (error) { %>
       <div class="alert alert-danger">
         <%= error %>
@@ -16,6 +18,7 @@
 
             <div id="form-warning" class="alert alert-warning d-none"></div>
 
+            <!--Explain how the field names connect to the submitted request. -->
             <form id="contact-form" method="post" action="/contact" class="card card-body">
               <div class="mb-3">
                 <label class="form-label" for="name">Name</label>

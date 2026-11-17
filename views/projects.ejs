@@ -1,9 +1,11 @@
+<!--Explain how the route's project data becomes cards on this page. -->
 <h1>Projects</h1>
 <p>Hover a card. It lifts. The pink line under it is hidden until then.</p>
 
 <%# projects is the array from the /projects route. forEach prints one card each %>
   <div class="row g-3">
     <% projects.forEach(function(project) { %>
+      <!--Explain how this loop creates one card for each project. -->
       <div class="col-md-4">
         <div class="card project-card h-100">
           <div class="card-body">

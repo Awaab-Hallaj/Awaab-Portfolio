@@ -1,3 +1,4 @@
+<!--Explain how this page introduces the site and its navigation paths. -->
 <div class="intro">
   <div class="row align-items-center">
     <div class="col-md-8">
@@ -5,11 +6,13 @@
       <p class="lead mb-2">Networking & IT Security Student.</p>
       <p>Portfolio for web and scripting. Hover a button and the label changes. Click the picture for a surprise!</p>
       <%# data-silly is the hover text. main.js reads that attribute %>
+        <!--Demonstrate how these data attributes connect to the JavaScript hover effect. -->
         <a class="btn silly me-2" href="/projects" data-silly="ok go look">See projects</a>
         <a class="btn silly light" href="/contact" data-silly="i don't bite">Contact me</a>
     </div>
     <div class="col-md-4 text-center mt-4 mt-md-0">
       <%# class avatar is what main.js looks for. the picture is in public/images %>
+        <!--Demonstrate the avatar interaction and explain these IDs/classes. -->
         <img src="/images/profile.png" alt="Awaab" class="avatar">
         <p id="poke-line" class="poke mt-2 mb-0">click the picture</p>
     </div>
